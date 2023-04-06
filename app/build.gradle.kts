@@ -8,13 +8,13 @@ plugins {
 }
 
 android {
-    compileSdk = io.lostImagin4tion.financialHelper.CompileVersions.CURRENT_COMPILE_VERSION
+    compileSdk = CompileVersions.CURRENT_COMPILE_VERSION
     namespace = "io.lostImagin4tion.financialHelper"
 
     defaultConfig {
         applicationId = namespace!!
-        minSdk = io.lostImagin4tion.financialHelper.CompileVersions.MINIMUM_COMPILE_VERSION
-        targetSdk = io.lostImagin4tion.financialHelper.CompileVersions.CURRENT_COMPILE_VERSION
+        minSdk = CompileVersions.MINIMUM_COMPILE_VERSION
+        targetSdk = CompileVersions.CURRENT_COMPILE_VERSION
         versionCode = 1
         versionName = "1.0"
 
@@ -36,12 +36,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = io.lostImagin4tion.financialHelper.CompileVersions.JAVA_COMPILE_VERSION
-        targetCompatibility = io.lostImagin4tion.financialHelper.CompileVersions.JAVA_COMPILE_VERSION
+        sourceCompatibility = CompileVersions.JAVA_COMPILE_VERSION
+        targetCompatibility = CompileVersions.JAVA_COMPILE_VERSION
     }
 
     kotlinOptions {
-        jvmTarget = io.lostImagin4tion.financialHelper.CompileVersions.JVM_VERSION
+        jvmTarget = CompileVersions.JVM_VERSION
     }
 
     buildFeatures {
@@ -61,28 +61,25 @@ android {
 
 dependencies {
 
-    coreLibraryDesugaring(io.lostImagin4tion.financialHelper.Dependencies.JavaDesugaring.DESUGARING)
+    coreLibraryDesugaring(Dependencies.JavaDesugaring.DESUGARING)
 
     // Android Core
-    io.lostImagin4tion.financialHelper.Dependencies.AndroidCore.ALL_DEPS.forEach { implementation(it) }
+    Dependencies.AndroidCore.ALL_DEPS.forEach { implementation(it) }
 
     // Coroutines
-    implementation(io.lostImagin4tion.financialHelper.Dependencies.Coroutines.ANDROID)
+    implementation(Dependencies.Coroutines.ANDROID)
 
     // Compose
-    io.lostImagin4tion.financialHelper.Dependencies.Compose.ALL_DEPS.forEach { implementation(it) }
-    io.lostImagin4tion.financialHelper.Dependencies.Compose.Core.ALL_CORE_DEBUG_DEPS.forEach { debugImplementation(it) }
+    Dependencies.Compose.ALL_DEPS.forEach { implementation(it) }
+    Dependencies.Compose.Core.ALL_CORE_DEBUG_DEPS.forEach { debugImplementation(it) }
 
     // UI components
-    io.lostImagin4tion.financialHelper.Dependencies.UI.ALL_DEPS.forEach { implementation(it) }
+    Dependencies.UI.ALL_DEPS.forEach { implementation(it) }
 
     // Dagger
-    implementation(io.lostImagin4tion.financialHelper.Dependencies.Dagger.ANDROID)
-    io.lostImagin4tion.financialHelper.Dependencies.Dagger.KAPT_DEPS.forEach { kapt(it) }
-
-    // Network
-    io.lostImagin4tion.financialHelper.Dependencies.Network.ALL_DEPS.forEach { implementation(it) }
+    implementation(Dependencies.Dagger.ANDROID)
+    Dependencies.Dagger.KAPT_DEPS.forEach { kapt(it) }
 
     // Logger
-    implementation(io.lostImagin4tion.financialHelper.Dependencies.Logger.TIMBER)
+    implementation(Dependencies.Logger.TIMBER)
 }
