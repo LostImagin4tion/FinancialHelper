@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Финансовый помощник</string>
+
+    <!-- WelcomeScreen -->
+    <string name="welcome_screen_track_money_subtitle">Отслеживайте свои доходы и расходы</string>
+    <string name="welcome_screen_set_goals_subtitle">Устанавливайте финансовые цели и достигайте их</string>
+    <string name="welcome_screen_charts_subtitle">Просматривайте свою статистику при помощи графиков</string>
+
+    <string name="welcome_screen_button_next">Далее</string>
+    <string name="welcome_screen_button_lets_start">Вперёд!</string>
+
+    <!-- HomeScreen -->
+    <string name="home_screen_title">Привет!</string>
+
+    <string name="home_screen_expenses_subtitle">Расходы</string>
+    <string name="home_screen_income_subtitle">Доходы</string>
+</resources>

@@ -5,7 +5,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 
 private val DarkColorScheme = darkColorScheme(
     primary = finHelperPrimary,
@@ -13,17 +12,16 @@ private val DarkColorScheme = darkColorScheme(
     primaryContainer = finHelperPrimaryButton,
     secondaryContainer = finHelperSecondaryButton,
     tertiaryContainer = finHelperTertiaryButton,
-    surface = Color.Black,
-    surfaceVariant = finHelperPrimaryButton,
-    surfaceTint = finHelperDarkGray,
-    inverseSurface = finHelperLightBackground,
-    onSurface = Color.White,
-    inverseOnSurface = Color.Black,
-    onBackground = finHelperVeryDarkBackground,
+    surface = finHelperCardColorDark,
+//    surfaceVariant = finHelperPrimaryButton,
+//    surfaceTint = finHelperDarkGray,
+//    inverseSurface = finHelperLightBackground,
+//    onSurface = Color.White,
+//    inverseOnSurface = Color.Black,
     background = finHelperDarkBackground,
-    error = finHelperRed,
-    outline = Color(0xFFC9C9C9),
-    scrim = finHelperChipColorDark
+//    error = finHelperRed,
+//    outline = Color(0xFFC9C9C9),
+//    scrim = finHelperChipColorDark
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -32,17 +30,16 @@ private val LightColorScheme = lightColorScheme(
     primaryContainer = finHelperPrimaryButton,
     secondaryContainer = finHelperSecondaryButton,
     tertiaryContainer = finHelperTertiaryButton,
-    surface = Color.White,
-    surfaceVariant = Color.Black,
-    inverseSurface = finHelperDarkBackground,
-    surfaceTint = finHelperLightBackground,
-    onSurface = Color.Black,
-    inverseOnSurface = Color.White,
-    onBackground = finHelperLightBackground,
+    surface = finHelperCardColorLight,
+//    surfaceVariant = Color.Black,
+//    inverseSurface = finHelperDarkBackground,
+//    surfaceTint = finHelperLightBackground,
+//    onSurface = Color.Black,
+//    inverseOnSurface = Color.White,
     background = finHelperLightBackground,
-    error = finHelperRed,
-    outline = finHelperTertiaryButton,
-    scrim = finHelperChipColorLight
+//    error = finHelperRed,
+//    outline = finHelperTertiaryButton,
+//    scrim = finHelperChipColorLight
 )
 
 @Composable

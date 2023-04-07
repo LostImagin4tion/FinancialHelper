@@ -17,10 +17,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import io.lostImagin4tion.financialHelper.ui.screens.Navigation
+import io.lostImagin4tion.financialHelper.ui.screens.navigation.Navigation
 import io.lostImagin4tion.financialHelper.ui.theme.FinancialHelperTheme
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
 
         WindowCompat.setDecorFitsSystemWindows(window, true)
         setContent {
@@ -72,9 +74,9 @@ class MainActivity : AppCompatActivity() {
             val currentWindow = (view.context as? Activity)?.window
                 ?: error("Not in an Activity - unable to get Window reference")
 
-            val navBarColor = MaterialTheme.colorScheme.onBackground
+            val navBarColor = MaterialTheme.colorScheme.background
 
-            val statusBarColor = MaterialTheme.colorScheme.onBackground
+            val statusBarColor = MaterialTheme.colorScheme.background
 
             val isLightStatusBar = !isSystemInDarkTheme()
 

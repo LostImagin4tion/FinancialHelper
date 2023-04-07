@@ -11,11 +11,13 @@ object Dependencies {
     object AndroidCore {
         private const val APPCOMPAT_VERSION = "1.5.1"
         private const val CORE_VERSION = "1.9.0"
+        private const val SPLASH_SCREEN_VERSION = "1.0.0"
 
         const val APPCOMPAT = "androidx.appcompat:appcompat:$APPCOMPAT_VERSION"
         const val CORE = "androidx.core:core-ktx:$CORE_VERSION"
+        const val SPLASH_SCREEN = "androidx.core:core-splashscreen:$SPLASH_SCREEN_VERSION"
 
-        val ALL_DEPS = listOf(APPCOMPAT, CORE)
+        val ALL_DEPS = listOf(APPCOMPAT, CORE, SPLASH_SCREEN)
     }
 
     object Coroutines {
@@ -122,6 +124,14 @@ object Dependencies {
         const val CORE = "com.google.android.material:material:$MATERIAL_VERSION"
 
         val ALL_DEPS = listOf(CONSTRAINT_LAYOUT, CORE)
+    }
+
+    object Lottie {
+        private const val VERSION = "6.0.0"
+
+        const val LOTTIE = "com.airbnb.android:lottie-compose:$VERSION"
+
+        val ALL_DEPS = listOf(LOTTIE)
     }
 
     object Dagger {

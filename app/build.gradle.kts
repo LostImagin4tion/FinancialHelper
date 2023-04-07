@@ -76,6 +76,9 @@ dependencies {
     // UI components
     Dependencies.UI.ALL_DEPS.forEach { implementation(it) }
 
+    // Lottie animations
+    Dependencies.Lottie.ALL_DEPS.forEach { implementation(it) }
+
     // Dagger
     implementation(Dependencies.Dagger.ANDROID)
     Dependencies.Dagger.KAPT_DEPS.forEach { kapt(it) }

@@ -1,4 +1,4 @@
-package io.lostImagin4tion.financialHelper.ui.screens
+package io.lostImagin4tion.financialHelper.ui.screens.navigation
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,6 +15,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import io.lostImagin4tion.financialHelper.domain.entities.navigation.Routes
+import io.lostImagin4tion.financialHelper.ui.screens.home.HomeScreen
+import io.lostImagin4tion.financialHelper.ui.screens.welcome.WelcomeScreen
 import kotlinx.coroutines.launch
 
 @Composable
@@ -54,18 +56,19 @@ fun NavigationContent(
     ) {
         NavHost(
             navController = navController,
-            startDestination = remember { Routes.splash }
+            startDestination = remember { Routes.welcome }
         ) {
-            composable(Routes.splash) {
-//                SplashScreen()
-//
-//                LaunchedEffect(Unit) {
-//                    delay(2000)
-//                    navController.navigate(Routes.login)
-//                }
+            composable(Routes.welcome) {
+                WelcomeScreen(
+                    navController = navController
+                )
             }
 
-
+            composable(route = Routes.home) {
+                HomeScreen(
+                    navController = navController
+                )
+            }
         }
     }
 }
