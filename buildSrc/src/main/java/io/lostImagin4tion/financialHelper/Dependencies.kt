@@ -144,6 +144,17 @@ object Dependencies {
         val KAPT_DEPS = listOf(COMPILER, PROCESSOR)
     }
 
+    object Room {
+        private const val VERSION = "2.4.3"
+
+        const val ROOM_KTX = "androidx.room:room-ktx:$VERSION"
+        const val ROOM_RUNTIME = "androidx.room:room-runtime:$VERSION"
+        const val COMPILER = "androidx.room:room-compiler:$VERSION"
+
+        val ALL_DEPS = listOf(ROOM_KTX, ROOM_RUNTIME)
+        val KAPT_DEPS = listOf(COMPILER)
+    }
+
     object Logger {
         private const val TIMBER_VERSION = "5.0.1"
 

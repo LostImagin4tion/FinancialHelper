@@ -1,4 +1,4 @@
-package io.lostImagin4tion.financialHelper
+package io.lostImagin4tion.financialHelper.ui.screens.main
 
 import android.app.Activity
 import android.os.Bundle

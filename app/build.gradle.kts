@@ -83,6 +83,10 @@ dependencies {
     implementation(Dependencies.Dagger.ANDROID)
     Dependencies.Dagger.KAPT_DEPS.forEach { kapt(it) }
 
+    // Room
+    Dependencies.Room.ALL_DEPS.forEach { implementation(it) }
+    Dependencies.Room.KAPT_DEPS.forEach { kapt(it) }
+
     // Logger
     implementation(Dependencies.Logger.TIMBER)
 }
