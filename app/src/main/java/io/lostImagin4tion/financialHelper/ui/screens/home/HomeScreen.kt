@@ -43,15 +43,18 @@ import io.lostImagin4tion.financialHelper.ui.theme.finHelperGray
 fun HomeScreen(
     navController: NavHostController
 ) {
+    val navigateToFinancialGoals = { navController.navigate(Routes.financialGoals) }
     val navigateToNewItemScreen = { navController.navigate(Routes.newItem) }
 
     HomeScreenContent(
+        navigateToFinancialGoals = navigateToFinancialGoals,
         navigateToNewItemScreen = navigateToNewItemScreen
     )
 }
 
 @Composable
 private fun HomeScreenContent(
+    navigateToFinancialGoals: () -> Unit = {},
     navigateToNewItemScreen: () -> Unit = {}
 ) {
     Scaffold(
@@ -77,6 +80,7 @@ private fun HomeScreenContent(
             .imePadding()
     ) {
         HomeScreenMainContent(
+            navigateToFinancialGoals,
             paddingValues = it
         )
     }
@@ -84,6 +88,7 @@ private fun HomeScreenContent(
 
 @Composable
 private fun HomeScreenMainContent(
+    navigateToFinancialGoals: () -> Unit = {},
     paddingValues: PaddingValues = PaddingValues(0.dp)
 ) = Column(
     horizontalAlignment = Alignment.Start,
@@ -102,7 +107,7 @@ private fun HomeScreenMainContent(
         horizontalArrangement = Arrangement.Start,
         modifier = Modifier
             .clip(RoundedCornerShape(25))
-            .clickable { }
+            .clickable { navigateToFinancialGoals() }
             .padding(Dimensions.commonPadding)
     ) {
         Box(
@@ -151,7 +156,7 @@ private fun HomeScreenMainContent(
         SimpleCard(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(100.dp)
+                .height(150.dp)
                 .weight(1f)
         ) {
             Column(
@@ -170,7 +175,7 @@ private fun HomeScreenMainContent(
         SimpleCard(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(100.dp)
+                .height(150.dp)
                 .weight(1f)
         ) {
             Column(

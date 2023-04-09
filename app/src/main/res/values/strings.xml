@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Financial Helper</string>
 
+    <string name="date_picker_ok_button">OK</string>
+    <string name="date_picker_cancel_button">Cancel</string>
+
     <!-- WelcomeScreen -->
     <string name="welcome_screen_track_money_subtitle">Track your income and expenses</string>
     <string name="welcome_screen_set_goals_subtitle">Set financial goals and achieve them</string>
@@ -40,6 +43,7 @@
 
     <!-- NewItemScreen -->
     <string name="new_item_screen_title">New item</string>
+
     <string name="new_item_screen_title_text_field">Title</string>
     <string name="new_item_screen_category_label">What are you adding?</string>
     <string name="new_item_screen_income">Income</string>
@@ -48,4 +52,20 @@
     <string name="new_item_screen_desc">Description</string>
 
     <string name="new_item_save_button">Save</string>
+
+    <!-- FinancialGoalsScreen -->
+    <string name="financial_goals_screen_title">Goals</string>
+
+    <string name="financial_goal_item_date">Target date: %s</string>
+    <string name="financial_goal_item_money">Target money: %s</string>
+
+    <!-- NewFinancialGoalScreen -->
+    <string name="new_financial_goal_screen_title">New goal</string>
+
+    <string name="new_financial_goal_screen_title_text_field">Title</string>
+    <string name="new_financial_goal_screen_target_money">Target money</string>
+    <string name="new_financial_goal_screen_target_date">Target date</string>
+    <string name="new_financial_goal_screen_description">Description</string>
+
+    <string name="new_item_screen_target_date_placeholder">Select date</string>
 </resources>

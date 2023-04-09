@@ -126,3 +126,10 @@ enum class IncomeCategories(
         Color(0xFFB16AB8)
     )
 }
+
+data class FinancialGoals(
+    val title: String,
+    val description: String,
+    val sumToAchieve: Double,
+    val targetDate: String
+)

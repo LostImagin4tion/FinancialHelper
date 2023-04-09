@@ -2,6 +2,9 @@
 <resources>
     <string name="app_name">Финансовый помощник</string>
 
+    <string name="date_picker_ok_button">ОК</string>
+    <string name="date_picker_cancel_button">Отмена</string>
+
     <!-- WelcomeScreen -->
     <string name="welcome_screen_track_money_subtitle">Отслеживайте свои доходы и расходы</string>
     <string name="welcome_screen_set_goals_subtitle">Устанавливайте финансовые цели и достигайте их</string>
@@ -41,7 +44,7 @@
 
     <!-- NewItemScreen -->
     <string name="new_item_screen_title">Новый элемент</string>
-    <string name="new_item_screen_title_text_field">Заголов</string>
+    <string name="new_item_screen_title_text_field">Название</string>
     <string name="new_item_screen_category_label">Что вы добавляете?</string>
     <string name="new_item_screen_income">Доход</string>
     <string name="new_item_screen_expenses">Расходы</string>
@@ -49,4 +52,20 @@
     <string name="new_item_screen_desc">Описание</string>
 
     <string name="new_item_save_button">Сохранить</string>
+
+    <!-- FinancialGoalsScreen -->
+    <string name="financial_goals_screen_title">Цели</string>
+
+    <string name="financial_goal_item_date">Дата: %s</string>
+    <string name="financial_goal_item_money">Деньги: %s</string>
+
+    <!-- NewFinancialGoalScreen -->
+    <string name="new_financial_goal_screen_title">Новая цель</string>
+
+    <string name="new_financial_goal_screen_title_text_field">Название</string>
+    <string name="new_financial_goal_screen_target_money">Сумма</string>
+    <string name="new_financial_goal_screen_target_date">Дата</string>
+    <string name="new_financial_goal_screen_description">Описание</string>
+
+    <string name="new_item_screen_target_date_placeholder">Выберите дату</string>
 </resources>
