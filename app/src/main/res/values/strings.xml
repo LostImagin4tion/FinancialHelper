@@ -10,8 +10,42 @@
     <string name="welcome_screen_button_lets_start">Let\'s start!</string>
 
     <!-- HomeScreen -->
-    <string name="home_screen_title">Hello again!</string>
+    <string name="home_screen_goals">Financial goals</string>
 
     <string name="home_screen_expenses_subtitle">Expenses</string>
     <string name="home_screen_income_subtitle">Income</string>
+    
+    <!-- Expenses -->
+    <string name="expenses_rent">Rent</string>
+    <string name="expenses_groceries">Groceries</string>
+    <string name="expenses_utility_bills">Utility bills</string>
+    <string name="expenses_transport">Transport</string>
+    <string name="expenses_loans_and_debts">Loans &amp; Debts</string>
+    <string name="expenses_transfers">Transfers</string>
+    <string name="expenses_health">Health</string>
+    <string name="expenses_clothes">Clothes</string>
+    <string name="expenses_entertainment">Entertainment</string>
+    <string name="expenses_restaurants_and_cafe">Restaurants &amp; Cafe</string>
+    <string name="expenses_gifts">Gifts</string>
+    <string name="expenses_other">Other</string>
+    
+    <!-- Income -->
+    <string name="income_salary">Salary</string>
+    <string name="income_transfers">Transfers</string>
+    <string name="income_gifts">Gifts</string>
+    <string name="income_debts">Debts</string>
+    <string name="income_stock_and_bounds">Stock &amp; Bounds</string>
+    <string name="income_rent">Rent</string>
+    <string name="income_other">Other</string>
+
+    <!-- NewItemScreen -->
+    <string name="new_item_screen_title">New item</string>
+    <string name="new_item_screen_title_text_field">Title</string>
+    <string name="new_item_screen_category_label">What are you adding?</string>
+    <string name="new_item_screen_income">Income</string>
+    <string name="new_item_screen_expenses">Expenses</string>
+    <string name="new_item_screen_select_category">Select category:</string>
+    <string name="new_item_screen_desc">Description</string>
+
+    <string name="new_item_save_button">Save</string>
 </resources>

@@ -16,6 +16,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import io.lostImagin4tion.financialHelper.domain.entities.navigation.Routes
 import io.lostImagin4tion.financialHelper.ui.screens.home.HomeScreen
+import io.lostImagin4tion.financialHelper.ui.screens.newItem.NewItemScreen
 import io.lostImagin4tion.financialHelper.ui.screens.welcome.WelcomeScreen
 import kotlinx.coroutines.launch
 
@@ -66,6 +67,12 @@ fun NavigationContent(
 
             composable(route = Routes.home) {
                 HomeScreen(
+                    navController = navController
+                )
+            }
+
+            composable(route = Routes.newItem) {
+                NewItemScreen(
                     navController = navController
                 )
             }
