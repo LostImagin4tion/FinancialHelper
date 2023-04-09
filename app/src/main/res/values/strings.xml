@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Financial Helper</string>
 
+    <string name="common_error_message">Ooops! Something went wrong…</string>
+
     <string name="date_picker_ok_button">OK</string>
     <string name="date_picker_cancel_button">Cancel</string>
 
@@ -45,11 +47,15 @@
     <string name="new_item_screen_title">New item</string>
 
     <string name="new_item_screen_title_text_field">Title</string>
-    <string name="new_item_screen_category_label">What are you adding?</string>
+    <string name="new_item_money_text_field">Amount of money</string>
+    <string name="new_item_date_text_field">Date</string>
+
+    <string name="new_item_screen_select_category">Select category:</string>
     <string name="new_item_screen_income">Income</string>
     <string name="new_item_screen_expenses">Expenses</string>
-    <string name="new_item_screen_select_category">Select category:</string>
+
     <string name="new_item_screen_desc">Description</string>
+    <string name="new_item_screen_category_label">What are you adding?</string>
 
     <string name="new_item_save_button">Save</string>
 
@@ -63,9 +69,15 @@
     <string name="new_financial_goal_screen_title">New goal</string>
 
     <string name="new_financial_goal_screen_title_text_field">Title</string>
-    <string name="new_financial_goal_screen_target_money">Target money</string>
-    <string name="new_financial_goal_screen_target_date">Target date</string>
+    <string name="new_financial_goal_screen_target_money">Amount of money</string>
+    <string name="new_financial_goal_screen_target_date">Date</string>
     <string name="new_financial_goal_screen_description">Description</string>
 
-    <string name="new_item_screen_target_date_placeholder">Select date</string>
+    <!-- IncomeScreen -->
+    <string name="income_screen_title">Income</string>
+    <string name="income_screen_item_money" translatable="false">+%s</string>
+
+    <!-- ExpensesScreen -->
+    <string name="expenses_screen_title">Expenses</string>
+    <string name="expenses_screen_item_money" translatable="false">-%s</string>
 </resources>

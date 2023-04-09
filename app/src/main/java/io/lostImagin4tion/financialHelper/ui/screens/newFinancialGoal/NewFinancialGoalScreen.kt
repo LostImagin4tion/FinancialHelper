@@ -31,8 +31,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import io.lostImagin4tion.financialHelper.R
+import io.lostImagin4tion.financialHelper.domain.entities.ui.FinancialGoalEntity
 import io.lostImagin4tion.financialHelper.ui.components.buttons.TextFilledButton
 import io.lostImagin4tion.financialHelper.ui.components.pickers.CustomDatePickerDialog
 import io.lostImagin4tion.financialHelper.ui.components.text.DisplayText
@@ -45,9 +47,16 @@ import java.util.GregorianCalendar
 fun NewFinancialGoalScreen(
     navController: NavHostController
 ) {
+    val viewModel: NewFinancialGoalViewModel = viewModel()
+
+    val saveNewGoal: (FinancialGoalEntity) -> Unit = {
+        viewModel.addNewGoal(it)
+        navController.popBackStack()
+    }
+
     NewFinancialGoalScreenContent(
         navigateBack = navController::popBackStack,
-        saveItem = navController::popBackStack
+        saveItem = saveNewGoal
     )
 }
 
@@ -55,7 +64,7 @@ fun NewFinancialGoalScreen(
 @Composable
 fun NewFinancialGoalScreenContent(
     navigateBack: () -> Unit = {},
-    saveItem: () -> Unit = {}
+    saveItem: (FinancialGoalEntity) -> Unit = {}
 ) = Column(
     verticalArrangement = Arrangement.Top,
     horizontalAlignment = Alignment.Start,
@@ -64,6 +73,9 @@ fun NewFinancialGoalScreenContent(
         .padding(Dimensions.mainHorizontalPadding / 2)
         .imePadding()
 ) {
+    val datePickerState = rememberDatePickerState()
+    val calendar = GregorianCalendar()
+
     var titleInput by rememberSaveable(stateSaver = TextFieldValue.Saver) {
         mutableStateOf(TextFieldValue())
     }
@@ -81,8 +93,16 @@ fun NewFinancialGoalScreenContent(
         mutableStateOf(false)
     }
 
-    val datePickerState = rememberDatePickerState()
-    val calendar = GregorianCalendar()
+    val onSaveButtonClick = {
+        saveItem(
+            FinancialGoalEntity(
+                title = titleInput.text,
+                description = descriptionInput.text,
+                sumToAchieve = targetMoneyInput.text.toDouble(),
+                targetDate = targetDateInput.text
+            )
+        )
+    }
 
     if (isDatePickerDisplayed) {
         CustomDatePickerDialog(
@@ -158,7 +178,6 @@ fun NewFinancialGoalScreenContent(
             targetDateInput = it
         },
         labelRes = R.string.new_financial_goal_screen_target_date,
-        placeholderRes = R.string.new_item_screen_target_date_placeholder,
         trailingIconRes = R.drawable.ic_calendar,
         onTrailingIconClick = { isDatePickerDisplayed = true },
         modifier = Modifier.clickable {
@@ -180,8 +199,10 @@ fun NewFinancialGoalScreenContent(
     Spacer(modifier = Modifier.weight(1f))
 
     TextFilledButton(
-        onClick = saveItem,
-        isEnabled = titleInput.text.isNotBlank(),
+        onClick = onSaveButtonClick,
+        isEnabled = titleInput.text.isNotBlank() &&
+                targetMoneyInput.text.isNotBlank() &&
+                targetDateInput.text.isNotBlank(),
         textResource = R.string.new_item_save_button,
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,

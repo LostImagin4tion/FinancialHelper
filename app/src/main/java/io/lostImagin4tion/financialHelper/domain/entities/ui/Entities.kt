@@ -127,7 +127,27 @@ enum class IncomeCategories(
     )
 }
 
-data class FinancialGoals(
+data class IncomeEntity(
+    val title: String,
+    val type: String,
+    val description: String,
+    val sum: Double,
+    val date: String,
+    @DrawableRes val iconRes: Int,
+    val iconBackgroundColor: Color
+)
+
+data class ExpensesEntity(
+    val title: String,
+    val type: String,
+    val description: String,
+    val sum: Double,
+    val date: String,
+    @DrawableRes val iconRes: Int,
+    val iconBackgroundColor: Color
+)
+
+data class FinancialGoalEntity(
     val title: String,
     val description: String,
     val sumToAchieve: Double,

@@ -15,8 +15,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import io.lostImagin4tion.financialHelper.domain.entities.navigation.Routes
+import io.lostImagin4tion.financialHelper.ui.screens.expenses.ExpensesScreen
 import io.lostImagin4tion.financialHelper.ui.screens.financialGoals.FinancialGoalsScreen
 import io.lostImagin4tion.financialHelper.ui.screens.home.HomeScreen
+import io.lostImagin4tion.financialHelper.ui.screens.income.IncomeScreen
 import io.lostImagin4tion.financialHelper.ui.screens.newFinancialGoal.NewFinancialGoalScreen
 import io.lostImagin4tion.financialHelper.ui.screens.newItem.NewItemScreen
 import io.lostImagin4tion.financialHelper.ui.screens.welcome.WelcomeScreen
@@ -87,6 +89,18 @@ fun NavigationContent(
 
             composable(route = Routes.newFinancialGoal) {
                 NewFinancialGoalScreen(
+                    navController = navController
+                )
+            }
+
+            composable(route = Routes.income) {
+                IncomeScreen(
+                    navController = navController
+                )
+            }
+
+            composable(route = Routes.expenses) {
+                ExpensesScreen(
                     navController = navController
                 )
             }

@@ -45,17 +45,23 @@ fun HomeScreen(
 ) {
     val navigateToFinancialGoals = { navController.navigate(Routes.financialGoals) }
     val navigateToNewItemScreen = { navController.navigate(Routes.newItem) }
+    val navigateToIncomeScreen = { navController.navigate(Routes.income) }
+    val navigateToExpensesScreen = { navController.navigate(Routes.expenses) }
 
     HomeScreenContent(
         navigateToFinancialGoals = navigateToFinancialGoals,
-        navigateToNewItemScreen = navigateToNewItemScreen
+        navigateToNewItemScreen = navigateToNewItemScreen,
+        navigateToIncomeScreen = navigateToIncomeScreen,
+        navigateToExpensesScreen = navigateToExpensesScreen
     )
 }
 
 @Composable
 private fun HomeScreenContent(
     navigateToFinancialGoals: () -> Unit = {},
-    navigateToNewItemScreen: () -> Unit = {}
+    navigateToNewItemScreen: () -> Unit = {},
+    navigateToIncomeScreen: () -> Unit = {},
+    navigateToExpensesScreen: () -> Unit = {}
 ) {
     Scaffold(
         floatingActionButton = {
@@ -80,7 +86,9 @@ private fun HomeScreenContent(
             .imePadding()
     ) {
         HomeScreenMainContent(
-            navigateToFinancialGoals,
+            navigateToFinancialGoals = navigateToFinancialGoals,
+            navigateToIncomeScreen = navigateToIncomeScreen,
+            navigateToExpensesScreen = navigateToExpensesScreen,
             paddingValues = it
         )
     }
@@ -89,6 +97,8 @@ private fun HomeScreenContent(
 @Composable
 private fun HomeScreenMainContent(
     navigateToFinancialGoals: () -> Unit = {},
+    navigateToIncomeScreen: () -> Unit = {},
+    navigateToExpensesScreen: () -> Unit = {},
     paddingValues: PaddingValues = PaddingValues(0.dp)
 ) = Column(
     horizontalAlignment = Alignment.Start,
@@ -158,6 +168,7 @@ private fun HomeScreenMainContent(
                 .fillMaxWidth()
                 .height(150.dp)
                 .weight(1f)
+                .clickable { navigateToExpensesScreen() }
         ) {
             Column(
                 verticalArrangement = Arrangement.Top,
@@ -177,6 +188,7 @@ private fun HomeScreenMainContent(
                 .fillMaxWidth()
                 .height(150.dp)
                 .weight(1f)
+                .clickable { navigateToIncomeScreen() }
         ) {
             Column(
                 verticalArrangement = Arrangement.Top,

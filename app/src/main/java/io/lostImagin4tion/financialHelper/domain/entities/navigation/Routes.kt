@@ -6,4 +6,6 @@ object Routes {
     const val newItem = "newItem"
     const val financialGoals = "financialGoals"
     const val newFinancialGoal = "newFinancialGoal"
+    const val income = "income"
+    const val expenses = "expenses"
 }

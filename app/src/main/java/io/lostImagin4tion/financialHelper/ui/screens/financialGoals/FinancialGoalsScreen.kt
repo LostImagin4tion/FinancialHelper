@@ -28,6 +28,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -40,10 +42,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import io.lostImagin4tion.financialHelper.R
 import io.lostImagin4tion.financialHelper.domain.entities.navigation.Routes
-import io.lostImagin4tion.financialHelper.domain.entities.ui.FinancialGoals
+import io.lostImagin4tion.financialHelper.domain.entities.ui.FinancialGoalEntity
 import io.lostImagin4tion.financialHelper.ui.components.cards.SimpleCard
 import io.lostImagin4tion.financialHelper.ui.components.text.DisplayText
 import io.lostImagin4tion.financialHelper.ui.components.text.LabelText
@@ -56,37 +59,18 @@ import io.lostImagin4tion.financialHelper.ui.theme.finHelperGray
 fun FinancialGoalsScreen(
     navController: NavHostController
 ) {
-    val dummys = listOf(
-        FinancialGoals(
-            "Хочу машину",
-            "вщпадлрвадоивпалоитвпаодливпотлдивадпваотлдживаотлдиотлдва",
-            5000.00,
-            "09.04.2023",
-        ),
-        FinancialGoals(
-            "Хочу машину",
-            "вщпадлрвадоивпало",
-            5000.00,
-            "09.04.2023",
-        ),
-        FinancialGoals(
-            "Хочу машину",
-            "вщпадлрвадоивпалоитвпаодливпотлдивадпваотлдживаотлдиотлдва",
-            5000.00,
-            "09.04.2023",
-        ),
-        FinancialGoals(
-            "Хочу машину",
-            "вщпадлрвадоивпалоитвпаодливпотлдивадпваотлдживаотлдиотлдва",
-            5000.00,
-            "09.04.2023",
-        )
-    )
+    val viewModel: FinancialGoalsViewModel = viewModel()
+
+    val financialGoals = viewModel.financialGoalsResult.collectAsState()
+
+    LaunchedEffect(key1 = financialGoals) {
+        viewModel.getAllGoals()
+    }
 
     val navigateToNewFinancialGoal = { navController.navigate(Routes.newFinancialGoal) }
 
     FinancialGoalsScreenContent(
-        financialGoals = dummys,
+        financialGoals = financialGoals.value.data ?: emptyList(),
         navigateToNewGoalScreen = navigateToNewFinancialGoal,
         navigateBack = navController::popBackStack,
     )
@@ -94,7 +78,7 @@ fun FinancialGoalsScreen(
 
 @Composable
 fun FinancialGoalsScreenContent(
-    financialGoals: List<FinancialGoals> = emptyList(),
+    financialGoals: List<FinancialGoalEntity> = emptyList(),
     navigateToNewGoalScreen: () -> Unit = {},
     navigateBack: () -> Unit = {}
 ) {
@@ -131,7 +115,7 @@ fun FinancialGoalsScreenContent(
 @Composable
 private fun FinancialGoalsScreenMainContent(
     navigateBack: () -> Unit = {},
-    financialGoals: List<FinancialGoals> = emptyList(),
+    financialGoals: List<FinancialGoalEntity> = emptyList(),
     paddingValues: PaddingValues = PaddingValues(0.dp),
 ) = Column(
     horizontalAlignment = Alignment.Start,

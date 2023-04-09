@@ -4,10 +4,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import io.lostImagin4tion.financialHelper.data.room.TableNames
+import java.util.UUID
 
 @Entity(tableName = TableNames.FINANCIAL_GOALS_TABLE)
 data class FinancialGoalRoomEntity(
-    @PrimaryKey val uid: Int,
+    @PrimaryKey val uid: String = UUID.randomUUID().toString(),
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "sum_to_achieve") val sumToAchieve: Double,
@@ -16,7 +17,7 @@ data class FinancialGoalRoomEntity(
 
 @Entity(tableName = TableNames.EXPENSES_TABLE)
 data class ExpensesRoomEntity(
-    @PrimaryKey val uid: Int,
+    @PrimaryKey val uid: String = UUID.randomUUID().toString(),
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "type") val type: String,
     @ColumnInfo(name = "description") val description: String,
@@ -26,7 +27,7 @@ data class ExpensesRoomEntity(
 
 @Entity(tableName = TableNames.INCOME_TABLE)
 data class IncomeRoomEntity(
-    @PrimaryKey val uid: Int,
+    @PrimaryKey val uid: String = UUID.randomUUID().toString(),
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "type") val type: String,
     @ColumnInfo(name = "description") val description: String,
