@@ -5,6 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import io.lostImagin4tion.financialHelper.ui.screens.expenses.ExpensesViewModel
 import io.lostImagin4tion.financialHelper.ui.screens.financialGoals.FinancialGoalsViewModel
+import io.lostImagin4tion.financialHelper.ui.screens.home.HomeViewModel
 import io.lostImagin4tion.financialHelper.ui.screens.income.IncomeViewModel
 import io.lostImagin4tion.financialHelper.ui.screens.newFinancialGoal.NewFinancialGoalViewModel
 import io.lostImagin4tion.financialHelper.ui.screens.newItem.NewItemViewModel
@@ -26,4 +27,5 @@ interface AppComponent {
     fun inject(expensesViewModel: ExpensesViewModel)
     fun inject(newFinancialGoalViewModel: NewFinancialGoalViewModel)
     fun inject(financialGoalsViewModel: FinancialGoalsViewModel)
+    fun inject(homeViewModel: HomeViewModel)
 }

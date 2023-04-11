@@ -15,8 +15,8 @@ val finHelperDarkGray = Color(0xFF2E2E2E)
 val finHelperGray = Color(0xFF7D7D7D)
 val finHelperLightGray = Color(0xFF8A8A8E)
 
-val finHelperRed = Color(0xFFAC4444)
-val finHelperGreen = Color(0xFF0CBD68)
+val finHelperExpensesChartColor = Color(0xFFAC4444)
+val finHelperIncomeChartColor = Color(0xFF0CBD68)
 
 /**
  * Action / Button Colors

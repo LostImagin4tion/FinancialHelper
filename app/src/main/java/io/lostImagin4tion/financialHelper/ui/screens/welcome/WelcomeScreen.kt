@@ -74,7 +74,13 @@ fun WelcomeScreen(
         )
     }
 
-    val navigateToHomeScreen = { navController.navigate(Routes.home) }
+    val navigateToHomeScreen: () -> Unit = {
+        navController.navigate(Routes.home) {
+            popUpTo(Routes.welcome) {
+                inclusive = true
+            }
+        }
+    }
 
     WelcomeScreenContent(
         welcomeScreenEntities = welcomeScreenEntities,

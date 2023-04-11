@@ -50,9 +50,9 @@ val Typography = Typography(
     ),
     labelLarge = TextStyle(
         fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Bold,
+        fontWeight = FontWeight.Medium,
         fontSize = 18.sp,
-        lineHeight = 18.sp
+        lineHeight = 24.sp
     ),
     displayLarge = TextStyle(
         fontFamily = FontFamily.Default,

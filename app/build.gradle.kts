@@ -79,6 +79,9 @@ dependencies {
     // Lottie animations
     Dependencies.Lottie.ALL_DEPS.forEach { implementation(it) }
 
+    // Charts
+    Dependencies.Charts.ALL_DEPS.forEach { implementation(it) }
+
     // Dagger
     implementation(Dependencies.Dagger.ANDROID)
     Dependencies.Dagger.KAPT_DEPS.forEach { kapt(it) }

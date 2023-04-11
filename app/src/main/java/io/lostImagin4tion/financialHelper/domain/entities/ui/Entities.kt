@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.Color
+import com.patrykandpatrick.vico.core.entry.ChartEntry
 import io.lostImagin4tion.financialHelper.R
 
 data class WelcomeScreenEntity(
@@ -152,4 +153,39 @@ data class FinancialGoalEntity(
     val description: String,
     val sumToAchieve: Double,
     val targetDate: String
+)
+
+data class LineChartPointEntity(
+    val date: String,
+    val sum: Float
+)
+
+data class LineChartEntity(
+    val points: List<LineChartPointEntity>,
+    val lineColor: Color,
+    val lineLegend: String
+)
+
+data class IncomeAndExpensesLineChartData(
+    val incomeData: LineChartEntity,
+    val expensesData: LineChartEntity
+)
+
+class CustomChartEntry(
+    val date: String,
+    override val x: Float,
+    override val y: Float
+): ChartEntry {
+    override fun withY(y: Float) = CustomChartEntry(date, x, y)
+}
+
+data class PieChartEntity(
+    val sum: Float,
+    @StringRes val typeRes: Int,
+    val color: Color
+)
+
+data class IncomeAndExpensesPieChartData(
+    val incomeData: List<PieChartEntity>,
+    val expensesData: List<PieChartEntity>
 )

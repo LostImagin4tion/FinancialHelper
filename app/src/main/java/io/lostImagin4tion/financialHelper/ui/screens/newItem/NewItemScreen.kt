@@ -472,7 +472,7 @@ fun NewItemScreenContent(
         }
     }
 
-    Spacer(modifier = Modifier.height(Dimensions.mainVerticalPadding))
+    Spacer(modifier = Modifier.height(Dimensions.mainVerticalPadding * 2))
 
     TextFilledButton(
         onClick = onSaveButtonClick,

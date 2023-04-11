@@ -3,6 +3,7 @@ package io.lostImagin4tion.financialHelper.data.repositories
 import androidx.compose.ui.graphics.Color
 import io.lostImagin4tion.financialHelper.R
 import io.lostImagin4tion.financialHelper.data.repositories.utils.withIO
+import io.lostImagin4tion.financialHelper.data.room.converters.DateConverter
 import io.lostImagin4tion.financialHelper.data.room.dao.ExpensesDao
 import io.lostImagin4tion.financialHelper.data.room.entities.ExpensesRoomEntity
 import io.lostImagin4tion.financialHelper.domain.entities.ui.ExpensesCategories
@@ -23,7 +24,7 @@ class ExpensesRepository @Inject constructor(
                 type = it.type,
                 description = it.description,
                 sum = it.sum,
-                date = it.date,
+                date = DateConverter.fromDateInMillis(it.dateInMillis),
                 iconRes = expensesCategories[it.type]?.iconRes ?: R.drawable.ic_like,
                 iconBackgroundColor = expensesCategories[it.type]?.color ?: Color.White
             )
@@ -37,7 +38,7 @@ class ExpensesRepository @Inject constructor(
                 type = item.type,
                 description = item.description,
                 sum = item.sum,
-                date = item.date
+                dateInMillis = DateConverter.toDateInMillis(item.date)
             )
         )
     }

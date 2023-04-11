@@ -12,7 +12,7 @@ data class FinancialGoalRoomEntity(
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "sum_to_achieve") val sumToAchieve: Double,
-    @ColumnInfo(name = "target_date") val targetDate: String
+    @ColumnInfo(name = "target_date") val targetDateInMillis: Long
 )
 
 @Entity(tableName = TableNames.EXPENSES_TABLE)
@@ -22,7 +22,7 @@ data class ExpensesRoomEntity(
     @ColumnInfo(name = "type") val type: String,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "sum") val sum: Double,
-    @ColumnInfo(name = "date") val date: String
+    @ColumnInfo(name = "date") val dateInMillis: Long
 )
 
 @Entity(tableName = TableNames.INCOME_TABLE)
@@ -32,5 +32,17 @@ data class IncomeRoomEntity(
     @ColumnInfo(name = "type") val type: String,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "sum") val sum: Double,
-    @ColumnInfo(name = "date") val date: String
+    @ColumnInfo(name = "date") val dateInMillis: Long
+)
+
+data class IncomeSumDateType(
+    @ColumnInfo(name = "sum") val sum: Double,
+    @ColumnInfo(name = "type") val type: String,
+    @ColumnInfo(name = "date") val dateInMillis: Long
+)
+
+data class ExpensesSumDateType(
+    @ColumnInfo(name = "sum") val sum: Double,
+    @ColumnInfo(name = "type") val type: String,
+    @ColumnInfo(name = "date") val dateInMillis: Long
 )

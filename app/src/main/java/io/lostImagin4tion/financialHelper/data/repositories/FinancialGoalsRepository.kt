@@ -1,6 +1,7 @@
 package io.lostImagin4tion.financialHelper.data.repositories
 
 import io.lostImagin4tion.financialHelper.data.repositories.utils.withIO
+import io.lostImagin4tion.financialHelper.data.room.converters.DateConverter
 import io.lostImagin4tion.financialHelper.data.room.dao.FinancialGoalDao
 import io.lostImagin4tion.financialHelper.data.room.entities.FinancialGoalRoomEntity
 import io.lostImagin4tion.financialHelper.domain.entities.ui.FinancialGoalEntity
@@ -17,7 +18,7 @@ class FinancialGoalsRepository @Inject constructor(
                 title = it.title,
                 description = it.description,
                 sumToAchieve = it.sumToAchieve,
-                targetDate = it.targetDate
+                targetDate = DateConverter.fromDateInMillis(it.targetDateInMillis)
             )
         }
     }
@@ -28,7 +29,7 @@ class FinancialGoalsRepository @Inject constructor(
                 title = item.title,
                 description = item.description,
                 sumToAchieve = item.sumToAchieve,
-                targetDate = item.targetDate
+                targetDateInMillis = DateConverter.toDateInMillis(item.targetDate)
             )
         )
     }

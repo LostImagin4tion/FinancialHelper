@@ -134,6 +134,19 @@ object Dependencies {
         val ALL_DEPS = listOf(LOTTIE)
     }
 
+    object Charts {
+        private const val VICO_VERSION = "1.6.5"
+        private const val PIE_CHART_VERSION = "0.2.4-alpha"
+
+        const val VICO_CORE = "com.patrykandpatrick.vico:core:$VICO_VERSION"
+        const val VICO_COMPOSE = "com.patrykandpatrick.vico:compose:$VICO_VERSION"
+        const val VICO_MATERIAL = "com.patrykandpatrick.vico:compose-m3:$VICO_VERSION"
+
+        const val PIE_CHART = "com.github.tehras:charts:$PIE_CHART_VERSION"
+
+        val ALL_DEPS = listOf(VICO_CORE, VICO_COMPOSE, VICO_MATERIAL, PIE_CHART)
+    }
+
     object Dagger {
         private const val VERSION = "2.44"
 

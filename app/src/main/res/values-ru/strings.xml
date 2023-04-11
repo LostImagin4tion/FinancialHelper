@@ -20,6 +20,10 @@
 
     <string name="home_screen_expenses_subtitle">Расходы</string>
     <string name="home_screen_income_subtitle">Доходы</string>
+    <string name="home_screen_statistics">Статистика</string>
+
+    <string name="home_screen_statistics_no_data">Нет данных</string>
+    <string name="income_or_expenses_sum">за всё время</string>
 
     <!-- Expenses -->
     <string name="expenses_rent">Аренда / Квартплата</string>

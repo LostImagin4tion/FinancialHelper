@@ -39,7 +39,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -210,19 +209,45 @@ private fun FinancialGoalsScreenMainContent(
                         }
                     }
 
+                    Spacer(modifier = Modifier.height(Dimensions.mainVerticalPadding))
+
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_calendar),
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(24.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(Dimensions.commonPadding))
+
+                        LabelText(text = goal.targetDate)
+                    }
+
                     Spacer(modifier = Modifier.height(Dimensions.commonPadding))
 
-                    LabelText(
-                        text = stringResource(R.string.financial_goal_item_date)
-                            .format(goal.targetDate)
-                    )
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_dollar),
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(24.dp)
+                        )
 
-                    Spacer(modifier = Modifier.height(Dimensions.commonPadding / 2))
+                        Spacer(modifier = Modifier.width(Dimensions.commonPadding))
 
-                    LabelText(
-                        text = stringResource(R.string.financial_goal_item_money)
-                            .format(goal.sumToAchieve.toString())
-                    )
+                        LabelText(
+                            text = goal.sumToAchieve
+                                .toString()
+                                .format("%.2f")
+                        )
+                    }
 
                     AnimatedVisibility(
                         visible = isExpanded,
@@ -246,48 +271,6 @@ private fun FinancialGoalsScreenMainContent(
             }
 
             Spacer(modifier = Modifier.height(Dimensions.commonPadding))
-        }
-    }
-
-    Row(
-        verticalAlignment = Alignment.Top,
-        horizontalArrangement = Arrangement.Start,
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        SimpleCard(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(150.dp)
-                .weight(1f)
-        ) {
-            Column(
-                verticalArrangement = Arrangement.Top,
-                horizontalAlignment = Alignment.Start,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(Dimensions.commonPadding)
-            ) {
-                SubtitleText(textRes = R.string.home_screen_expenses_subtitle)
-            }
-        }
-
-        Spacer(modifier = Modifier.width(Dimensions.mainHorizontalPadding / 2))
-
-        SimpleCard(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(150.dp)
-                .weight(1f)
-        ) {
-            Column(
-                verticalArrangement = Arrangement.Top,
-                horizontalAlignment = Alignment.Start,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(Dimensions.commonPadding)
-            ) {
-                SubtitleText(textRes = R.string.home_screen_income_subtitle)
-            }
         }
     }
 }

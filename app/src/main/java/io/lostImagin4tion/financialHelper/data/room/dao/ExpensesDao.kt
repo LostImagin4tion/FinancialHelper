@@ -8,12 +8,16 @@ import androidx.room.Query
 import androidx.room.Update
 import io.lostImagin4tion.financialHelper.data.room.TableNames
 import io.lostImagin4tion.financialHelper.data.room.entities.ExpensesRoomEntity
+import io.lostImagin4tion.financialHelper.data.room.entities.ExpensesSumDateType
 
 @Dao
 interface ExpensesDao {
 
-    @Query("SELECT * FROM $TABLE_NAME")
+    @Query("SELECT * FROM $TABLE_NAME ORDER BY date DESC")
     fun getAll(): List<ExpensesRoomEntity>
+
+    @Query("SELECT sum, type, date FROM $TABLE_NAME ORDER BY date")
+    fun getSumTypeAndDate(): List<ExpensesSumDateType>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(entity: ExpensesRoomEntity)
