@@ -7,6 +7,7 @@ import io.lostImagin4tion.financialHelper.ui.screens.expenses.ExpensesViewModel
 import io.lostImagin4tion.financialHelper.ui.screens.financialGoals.FinancialGoalsViewModel
 import io.lostImagin4tion.financialHelper.ui.screens.home.HomeViewModel
 import io.lostImagin4tion.financialHelper.ui.screens.income.IncomeViewModel
+import io.lostImagin4tion.financialHelper.ui.screens.main.MainActivity
 import io.lostImagin4tion.financialHelper.ui.screens.newFinancialGoal.NewFinancialGoalViewModel
 import io.lostImagin4tion.financialHelper.ui.screens.newItem.NewItemViewModel
 import javax.inject.Singleton
@@ -21,6 +22,8 @@ interface AppComponent {
         fun context(context: Context): Builder
         fun build(): AppComponent
     }
+
+    fun inject(mainActivity: MainActivity)
 
     fun inject(incomeViewModel: IncomeViewModel)
     fun inject(newItemViewModel: NewItemViewModel)

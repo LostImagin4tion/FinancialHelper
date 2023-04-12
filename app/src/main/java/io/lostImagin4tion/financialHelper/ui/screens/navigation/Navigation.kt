@@ -28,7 +28,9 @@ import kotlinx.coroutines.launch
 fun Navigation(
     snackbarHostState: SnackbarHostState,
     paddingValues: PaddingValues,
-    navController: NavHostController
+    navController: NavHostController,
+    isFirstLaunch: Boolean = true,
+    changeIsFirstLaunch: () -> Unit = {}
 ) {
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
@@ -43,6 +45,8 @@ fun Navigation(
         paddingValues = paddingValues,
         navController = navController,
         showMessage = showMessage,
+        isFirstLaunch = isFirstLaunch,
+        changeIsFirstLaunch = changeIsFirstLaunch
     )
 }
 
@@ -52,6 +56,8 @@ fun NavigationContent(
     paddingValues: PaddingValues,
     navController: NavHostController,
     showMessage: (Int) -> Unit,
+    isFirstLaunch: Boolean = true,
+    changeIsFirstLaunch: () -> Unit = {}
 ) {
     Surface(
         modifier = Modifier
@@ -61,7 +67,12 @@ fun NavigationContent(
     ) {
         NavHost(
             navController = navController,
-            startDestination = remember { Routes.welcome }
+            startDestination = if (isFirstLaunch) {
+                changeIsFirstLaunch()
+                remember { Routes.welcome }
+            } else {
+                remember { Routes.home }
+            }
         ) {
             composable(Routes.welcome) {
                 WelcomeScreen(

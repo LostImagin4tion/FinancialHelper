@@ -2,10 +2,12 @@ package io.lostImagin4tion.financialHelper.dagger
 
 import dagger.Binds
 import dagger.Module
+import io.lostImagin4tion.financialHelper.data.dataStore.DataStorage
 import io.lostImagin4tion.financialHelper.data.repositories.ChartsRepository
 import io.lostImagin4tion.financialHelper.data.repositories.ExpensesRepository
 import io.lostImagin4tion.financialHelper.data.repositories.FinancialGoalsRepository
 import io.lostImagin4tion.financialHelper.data.repositories.IncomeRepository
+import io.lostImagin4tion.financialHelper.domain.dataStore.IDataStorage
 import io.lostImagin4tion.financialHelper.domain.repositories.IChartsRepository
 import io.lostImagin4tion.financialHelper.domain.repositories.IExpensesRepository
 import io.lostImagin4tion.financialHelper.domain.repositories.IFinancialGoalsRepository
@@ -30,4 +32,8 @@ abstract class RepositoriesModule {
     @Binds
     @Singleton
     abstract fun bindChartsRepository(impl: ChartsRepository): IChartsRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindDataStorage(impl: DataStorage): IDataStorage
 }

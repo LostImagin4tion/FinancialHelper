@@ -222,14 +222,14 @@ private fun HomeScreenMainContent(
 
                 Spacer(modifier = Modifier.height(Dimensions.mainVerticalPadding))
 
-                if (incomeSum == null) {
+                if (expensesSum == null) {
                     LabelText(
                         textRes = R.string.home_screen_statistics_no_data,
                         isLarge = true
                     )
                 } else {
                     LabelText(
-                        text = incomeSum,
+                        text = expensesSum,
                         isLarge = true
                     )
 
@@ -259,14 +259,14 @@ private fun HomeScreenMainContent(
 
                 Spacer(modifier = Modifier.height(Dimensions.mainVerticalPadding))
 
-                if (expensesSum == null) {
+                if (incomeSum == null) {
                     LabelText(
                         textRes = R.string.home_screen_statistics_no_data,
                         isLarge = true
                     )
                 } else {
                     LabelText(
-                        text = expensesSum,
+                        text = incomeSum,
                         isLarge = true
                     )
 

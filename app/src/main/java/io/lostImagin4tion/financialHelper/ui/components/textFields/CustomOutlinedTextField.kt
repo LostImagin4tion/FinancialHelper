@@ -74,12 +74,13 @@ fun CustomOutlinedTextField(
         errorBorderColor = MaterialTheme.colorScheme.error,
         errorTrailingIconColor = MaterialTheme.colorScheme.error,
         focusedLabelColor = MaterialTheme.colorScheme.primary,
-        unfocusedLabelColor = MaterialTheme.colorScheme.onSurface,
+        unfocusedLabelColor = MaterialTheme.colorScheme.primary,
+        disabledLabelColor = MaterialTheme.colorScheme.primary,
         errorLabelColor = MaterialTheme.colorScheme.error,
         unfocusedPlaceholderColor = finHelperGray,
         focusedPlaceholderColor = finHelperGray,
         disabledBorderColor = finHelperGray,
-        disabledTextColor = MaterialTheme.colorScheme.onSurface
+        disabledTextColor = MaterialTheme.colorScheme.primary
     )
 
     Row(

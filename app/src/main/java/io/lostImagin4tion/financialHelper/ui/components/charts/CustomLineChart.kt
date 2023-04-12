@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.patrykandpatrick.vico.compose.chart.Chart
@@ -76,7 +77,7 @@ fun CustomLineChart(
                 textSize = 14.sp,
                 typeface = Typeface.DEFAULT,
             ),
-            labelText = lineModel.lineLegend,
+            labelText = stringResource(lineModel.lineLegendRes),
         )
     )
 

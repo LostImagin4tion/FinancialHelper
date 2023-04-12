@@ -102,7 +102,7 @@ enum class IncomeCategories(
         Color(0xFFFF9869)
     ),
     Transfers(
-        R.string.income_salary,
+        R.string.income_transfers,
         R.drawable.ic_credit_card,
         Color(0xFF97C561)
     ),
@@ -163,7 +163,7 @@ data class LineChartPointEntity(
 data class LineChartEntity(
     val points: List<LineChartPointEntity>,
     val lineColor: Color,
-    val lineLegend: String
+    @StringRes val lineLegendRes: Int
 )
 
 data class IncomeAndExpensesLineChartData(

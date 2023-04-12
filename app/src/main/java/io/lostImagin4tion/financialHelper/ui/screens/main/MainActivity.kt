@@ -21,16 +21,27 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import io.lostImagin4tion.financialHelper.FinancialHelperApp
+import io.lostImagin4tion.financialHelper.domain.dataStore.IDataStorage
 import io.lostImagin4tion.financialHelper.ui.screens.navigation.Navigation
 import io.lostImagin4tion.financialHelper.ui.theme.FinancialHelperTheme
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavHostController
 
+    @Inject
+    lateinit var dataStorage: IDataStorage
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        FinancialHelperApp.appComponent.inject(this)
         super.onCreate(savedInstanceState)
         installSplashScreen()
+
+        val changeIsFirstLaunch: () -> Unit = {
+            dataStorage.setIsFirstLaunch(false)
+        }
 
         WindowCompat.setDecorFitsSystemWindows(window, true)
         setContent {
@@ -58,7 +69,9 @@ class MainActivity : AppCompatActivity() {
                         Navigation(
                             snackbarHostState = snackbarHostState,
                             paddingValues = it,
-                            navController = navController
+                            navController = navController,
+                            isFirstLaunch = dataStorage.isFirstLaunch,
+                            changeIsFirstLaunch = changeIsFirstLaunch
                         )
                     }
                 )

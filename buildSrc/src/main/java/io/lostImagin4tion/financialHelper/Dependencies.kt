@@ -168,19 +168,18 @@ object Dependencies {
         val KAPT_DEPS = listOf(COMPILER)
     }
 
+    object DataStore {
+        private const val VERSION = "1.0.0"
+
+        const val SHARED_PREF_DATASTORE = "androidx.datastore:datastore-preferences:$VERSION"
+
+        val ALL_DEPS = listOf(SHARED_PREF_DATASTORE)
+    }
+
     object Logger {
         private const val TIMBER_VERSION = "5.0.1"
 
         const val TIMBER = "com.jakewharton.timber:timber:$TIMBER_VERSION"
-    }
-
-    object Network {
-        private const val VERSION = "2.9.0"
-
-        const val RETROFIT = "com.squareup.retrofit2:retrofit:$VERSION"
-        const val MOSHI_CONVERTER = "com.squareup.retrofit2:converter-moshi:$VERSION"
-
-        val ALL_DEPS = listOf(RETROFIT, MOSHI_CONVERTER)
     }
 
     object Test {

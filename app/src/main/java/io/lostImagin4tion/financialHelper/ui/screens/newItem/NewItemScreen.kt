@@ -338,6 +338,8 @@ fun NewItemScreenContent(
             chosenExpensesCategory.color
         }
 
+        Spacer(modifier = Modifier.width(3.dp))
+
         Box(
             modifier = Modifier
                 .background(

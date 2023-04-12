@@ -1,5 +1,6 @@
 package io.lostImagin4tion.financialHelper.data.repositories
 
+import io.lostImagin4tion.financialHelper.R
 import io.lostImagin4tion.financialHelper.data.repositories.utils.withIO
 import io.lostImagin4tion.financialHelper.data.room.converters.DateConverter
 import io.lostImagin4tion.financialHelper.data.room.dao.ExpensesDao
@@ -44,12 +45,12 @@ class ChartsRepository @Inject constructor(
         val incomeLine = LineChartEntity(
             points = incomes,
             lineColor = finHelperIncomeChartColor,
-            lineLegend = "Income"
+            lineLegendRes = R.string.home_screen_income_subtitle
         )
         val expensesLine = LineChartEntity(
             points = expenses,
             lineColor = finHelperExpensesChartColor,
-            lineLegend = "Expenses"
+            lineLegendRes = R.string.home_screen_expenses_subtitle
         )
 
         IncomeAndExpensesLineChartData(

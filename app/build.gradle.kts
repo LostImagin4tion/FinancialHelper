@@ -90,6 +90,9 @@ dependencies {
     Dependencies.Room.ALL_DEPS.forEach { implementation(it) }
     Dependencies.Room.KAPT_DEPS.forEach { kapt(it) }
 
+    // DataStore
+    Dependencies.DataStore.ALL_DEPS.forEach { implementation(it) }
+
     // Logger
     implementation(Dependencies.Logger.TIMBER)
 }

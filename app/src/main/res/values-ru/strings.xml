@@ -16,7 +16,7 @@
     <string name="welcome_screen_button_lets_start">Вперёд!</string>
 
     <!-- HomeScreen -->
-    <string name="home_screen_goals">Financial goals</string>
+    <string name="home_screen_goals">Финансовые цели</string>
 
     <string name="home_screen_expenses_subtitle">Расходы</string>
     <string name="home_screen_income_subtitle">Доходы</string>
@@ -60,7 +60,7 @@
     <string name="new_item_screen_expenses">Расходы</string>
 
     <string name="new_item_screen_desc">Описание</string>
-    <string name="new_item_screen_select_category">Выберите категорию вашего дохода или расходов</string>
+    <string name="new_item_screen_select_category">Выберите категорию:</string>
 
     <string name="new_item_save_button">Сохранить</string>
 
