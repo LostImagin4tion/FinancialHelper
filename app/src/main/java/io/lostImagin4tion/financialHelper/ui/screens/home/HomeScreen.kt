@@ -316,9 +316,10 @@ private fun HomeScreenMainContent(
     }
 
     if (incomeAndExpensesData == null || pieChartData == null ||
-        (incomeAndExpensesData.expensesData.points.isEmpty() &&
-         incomeAndExpensesData.incomeData.points.isEmpty()
-        )
+        (
+            incomeAndExpensesData.expensesData.points.isEmpty() &&
+                incomeAndExpensesData.incomeData.points.isEmpty()
+            )
     ) {
         SimpleCard(
             modifier = Modifier.fillMaxWidth()

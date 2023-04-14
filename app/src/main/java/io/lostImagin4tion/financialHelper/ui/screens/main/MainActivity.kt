@@ -5,16 +5,10 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Snackbar
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
-import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -46,28 +40,13 @@ class MainActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, true)
         setContent {
             navController = rememberNavController()
-            val snackbarHostState = remember { SnackbarHostState() }
 
             FinancialHelperTheme {
                 SetupSystemBarsColors()
 
                 Scaffold(
-                    snackbarHost = {
-                        SnackbarHost(
-                            hostState = snackbarHostState,
-                            modifier = Modifier.navigationBarsPadding()
-                        ) {
-                            Snackbar(
-                                snackbarData = it,
-                                containerColor = MaterialTheme.colorScheme.inverseSurface,
-                                contentColor = MaterialTheme.colorScheme.inverseOnSurface,
-                                shape = MaterialTheme.shapes.small
-                            )
-                        }
-                    },
                     content = {
                         Navigation(
-                            snackbarHostState = snackbarHostState,
                             paddingValues = it,
                             navController = navController,
                             isFirstLaunch = dataStorage.isFirstLaunch,

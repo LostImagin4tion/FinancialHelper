@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class HomeViewModel(
     appComponent: AppComponent = FinancialHelperApp.appComponent
-): ViewModel() {
+) : ViewModel() {
 
     @Inject lateinit var chartsRepository: IChartsRepository
 

@@ -33,8 +33,8 @@ import com.patrykandpatrick.vico.core.component.text.TextComponent
 import com.patrykandpatrick.vico.core.context.DrawContext
 import com.patrykandpatrick.vico.core.dimensions.MutableDimensions
 import com.patrykandpatrick.vico.core.entry.ChartEntryModelProducer
-import io.lostImagin4tion.financialHelper.domain.entities.ui.LineChartEntity
 import io.lostImagin4tion.financialHelper.domain.entities.ui.CustomChartEntry
+import io.lostImagin4tion.financialHelper.domain.entities.ui.LineChartEntity
 import io.lostImagin4tion.financialHelper.ui.theme.finHelperLightGray
 
 @Composable
@@ -160,7 +160,7 @@ fun CustomLineChart(
                     this.color = MaterialTheme.colorScheme.primary.toArgb()
                 }
                 .build(),
-            indicator = object: Component() {
+            indicator = object : Component() {
                 override fun draw(
                     context: DrawContext,
                     left: Float,

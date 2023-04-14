@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 class NewFinancialGoalViewModel(
     appComponent: AppComponent = FinancialHelperApp.appComponent
-): ViewModel() {
+) : ViewModel() {
 
     @Inject lateinit var financialGoalRepository: IFinancialGoalsRepository
 

@@ -201,8 +201,8 @@ fun NewFinancialGoalScreenContent(
     TextFilledButton(
         onClick = onSaveButtonClick,
         isEnabled = titleInput.text.isNotBlank() &&
-                targetMoneyInput.text.isNotBlank() &&
-                targetDateInput.text.isNotBlank(),
+            targetMoneyInput.text.isNotBlank() &&
+            targetDateInput.text.isNotBlank(),
         textResource = R.string.new_item_save_button,
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,

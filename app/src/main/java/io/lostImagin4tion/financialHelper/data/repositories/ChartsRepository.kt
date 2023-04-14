@@ -20,7 +20,7 @@ import javax.inject.Inject
 class ChartsRepository @Inject constructor(
     private val incomeDao: IncomeDao,
     private val expensesDao: ExpensesDao
-): IChartsRepository {
+) : IChartsRepository {
 
     private val expensesCategories = ExpensesCategories.values().associateBy { it.name }
     private val incomeCategories = IncomeCategories.values().associateBy { it.name }

@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class FinancialGoalsRepository @Inject constructor(
     private val financialGoalsDao: FinancialGoalDao
-): IFinancialGoalsRepository {
+) : IFinancialGoalsRepository {
 
     override suspend fun getAll(): List<FinancialGoalEntity> = withIO {
         financialGoalsDao.getAll().map {

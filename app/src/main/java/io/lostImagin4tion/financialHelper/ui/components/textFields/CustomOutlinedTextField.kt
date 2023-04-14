@@ -131,7 +131,7 @@ fun CustomOutlinedTextField(
                 leadingIcon = leadingIconRes?.let {
                     {
                         IconButton(
-                            onClick = onTrailingIconClick,
+                            onClick = onLeadingIconClick,
                             modifier = Modifier.size(28.dp)
                         ) {
                             Icon(

@@ -175,7 +175,7 @@ class CustomChartEntry(
     val date: String,
     override val x: Float,
     override val y: Float
-): ChartEntry {
+) : ChartEntry {
     override fun withY(y: Float) = CustomChartEntry(date, x, y)
 }
 

@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class DataStorage @Inject constructor(
     private val context: Context
-): IDataStorage {
+) : IDataStorage {
 
     private val sharedPreferences by lazy {
         context.getSharedPreferences(

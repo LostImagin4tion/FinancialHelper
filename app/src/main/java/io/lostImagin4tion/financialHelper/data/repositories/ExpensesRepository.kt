@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 class ExpensesRepository @Inject constructor(
     private val expensesDao: ExpensesDao
-): IExpensesRepository {
+) : IExpensesRepository {
 
     private val expensesCategories = ExpensesCategories.values().associateBy { it.name }
 

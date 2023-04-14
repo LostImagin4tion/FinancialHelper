@@ -129,9 +129,9 @@ object Dependencies {
     object Lottie {
         private const val VERSION = "6.0.0"
 
-        const val LOTTIE = "com.airbnb.android:lottie-compose:$VERSION"
+        const val LOTTIE_ANIMATIONS = "com.airbnb.android:lottie-compose:$VERSION"
 
-        val ALL_DEPS = listOf(LOTTIE)
+        val ALL_DEPS = listOf(LOTTIE_ANIMATIONS)
     }
 
     object Charts {

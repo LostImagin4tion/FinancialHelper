@@ -13,9 +13,10 @@ import javax.inject.Inject
 
 class NewItemViewModel(
     appComponent: AppComponent = FinancialHelperApp.appComponent
-): ViewModel() {
+) : ViewModel() {
 
     @Inject lateinit var incomeRepository: IIncomeRepository
+
     @Inject lateinit var expensesRepository: IExpensesRepository
 
     init {

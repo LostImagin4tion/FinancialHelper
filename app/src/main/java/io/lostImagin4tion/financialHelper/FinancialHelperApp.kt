@@ -5,7 +5,7 @@ import io.lostImagin4tion.financialHelper.dagger.AppComponent
 import io.lostImagin4tion.financialHelper.dagger.DaggerAppComponent
 import timber.log.Timber
 
-class FinancialHelperApp: Application() {
+class FinancialHelperApp : Application() {
 
     override fun onCreate() {
         super.onCreate()

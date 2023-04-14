@@ -479,8 +479,8 @@ fun NewItemScreenContent(
     TextFilledButton(
         onClick = onSaveButtonClick,
         isEnabled = titleInput.text.isNotBlank() &&
-                moneyInput.text.isNotBlank() &&
-                dateInput.text.isNotBlank(),
+            moneyInput.text.isNotBlank() &&
+            dateInput.text.isNotBlank(),
         textResource = R.string.new_item_save_button,
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,

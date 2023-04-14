@@ -13,15 +13,7 @@ private val DarkColorScheme = darkColorScheme(
     secondaryContainer = finHelperSecondaryButton,
     tertiaryContainer = finHelperTertiaryButton,
     surface = finHelperCardColorDark,
-//    surfaceVariant = finHelperPrimaryButton,
-//    surfaceTint = finHelperDarkGray,
-//    inverseSurface = finHelperLightBackground,
-//    onSurface = Color.White,
-//    inverseOnSurface = Color.Black,
     background = finHelperDarkBackground,
-//    error = finHelperRed,
-//    outline = Color(0xFFC9C9C9),
-//    scrim = finHelperChipColorDark
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -31,22 +23,12 @@ private val LightColorScheme = lightColorScheme(
     secondaryContainer = finHelperSecondaryButton,
     tertiaryContainer = finHelperTertiaryButton,
     surface = finHelperCardColorLight,
-//    surfaceVariant = Color.Black,
-//    inverseSurface = finHelperDarkBackground,
-//    surfaceTint = finHelperLightBackground,
-//    onSurface = Color.Black,
-//    inverseOnSurface = Color.White,
     background = finHelperLightBackground,
-//    error = finHelperRed,
-//    outline = finHelperTertiaryButton,
-//    scrim = finHelperChipColorLight
 )
 
 @Composable
 fun FinancialHelperTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme

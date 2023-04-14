@@ -20,7 +20,7 @@ import io.lostImagin4tion.financialHelper.data.room.entities.IncomeRoomEntity
     version = 2,
     exportSchema = false
 )
-abstract class FinancialHelperDatabase: RoomDatabase() {
+abstract class FinancialHelperDatabase : RoomDatabase() {
     abstract fun financialGoalsDao(): FinancialGoalDao
     abstract fun expensesDao(): ExpensesDao
     abstract fun incomeDao(): IncomeDao

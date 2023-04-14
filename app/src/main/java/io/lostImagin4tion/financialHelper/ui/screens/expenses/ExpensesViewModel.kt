@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 class ExpensesViewModel(
     appComponent: AppComponent = FinancialHelperApp.appComponent
-): ViewModel() {
+) : ViewModel() {
 
     @Inject
     lateinit var expensesRepository: IExpensesRepository

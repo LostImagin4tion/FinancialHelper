@@ -28,11 +28,6 @@ val finHelperTertiaryButton = finHelperDarkGray
 val finHelperCardColorDark = Color(0xFF1D1D1D)
 val finHelperCardColorLight = Color(0xFFF9F9F9)
 
-val finHelperChipColorDark = Color(0xFF5D5C5A)
-val finHelperChipColorLight = finHelperDarkGray
-
-val finHelperUnselectedTextChipColor = Color(0xFF565656)
-
 /**
  * Background Colors
  */

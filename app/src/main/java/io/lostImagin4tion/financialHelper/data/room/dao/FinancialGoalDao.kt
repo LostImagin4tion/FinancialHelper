@@ -12,7 +12,7 @@ import io.lostImagin4tion.financialHelper.data.room.entities.FinancialGoalRoomEn
 @Dao
 interface FinancialGoalDao {
 
-    @Query("SELECT * FROM $TABLE_NAME ORDER BY target_date DESC")
+    @Query("SELECT * FROM $TABLE_NAME ORDER BY target_date")
     fun getAll(): List<FinancialGoalRoomEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

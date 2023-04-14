@@ -30,8 +30,11 @@ fun PagerIndicator(
     modifier = modifier
 ) {
     repeat(pageCount) { i ->
-        val color = if (pagerState.currentPage == i) MaterialTheme.colorScheme.primary
-            else finHelperGray
+        val color = if (pagerState.currentPage == i) {
+            MaterialTheme.colorScheme.primary
+        } else {
+            finHelperGray
+        }
 
         Box(
             modifier = Modifier
